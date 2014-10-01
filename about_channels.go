@@ -15,14 +15,14 @@ func aboutChannels() {
 
 	// the 'go' keyword runs a function-call in a new "goroutine"
 	// which executes "concurrently" with the calling "goroutine"
-	//go func() {
-	//	// your code goes here
-	//	ch = make(chan string, 3)
-	//}()
+	go func() {
+		// your code goes here
 
-	//assert(len(ch) == 0) // we'll need to make room for the queue, or suffer deadlocks
+	}()
+	ch = make(chan string, 3)
+	assert(len(ch) == 0) // we'll need to make room for the queue, or suffer deadlocks
 
-	//ch <- "bar"   // this send will succeed
-	//ch <- "quux"  // there's enough room for this send too
-	//ch <- "extra" // but the buffer only has two slots
+	ch <- "bar"   // this send will succeed
+	ch <- "quux"  // there's enough room for this send too
+	ch <- "extra" // but the buffer only has two slots
 }
